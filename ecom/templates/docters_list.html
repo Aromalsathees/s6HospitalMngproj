@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+<div class="container">
+
+{% for li in list %}
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="/media/{{li.image}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{li.name}}</h5>
+      <p class="card-text">{{li.position}}</p>
+      <p class="card-text">{{li.department}}</p>
+      <p class="card-text">{{li.hospital}}</p>
+      <a href="{% url 'doctersdetails' li.id %}" class="btn btn-danger">view profile</a>
+    </div>
+  </div>
+  {% endfor %}
+
+</div>
+
+{% endblock %}

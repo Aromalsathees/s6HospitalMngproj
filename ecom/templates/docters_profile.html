@@ -1,0 +1,78 @@
+{% extends "index.html" %}
+
+
+{% block content %}
+
+       
+<section class="container-fluid  about-coo">
+    <div class="container">
+     
+        <div class="row about-row">
+            <div class="col-md-6 about-img">
+                <img src="/media/{{doct.image}}" width="900" , height="auto" alt="">
+            </div>
+            <div class="col-md-6 about-text">
+                <h1><strong>{{doct.name}}</strong></h1>
+                
+                <p>{{doct.description}}</p>
+                 <h4>{{doct.department}}</h4>
+                 <h4>{{doct.position}}</h4>
+                 <h3>{{doct.workingtime}}</h3>
+                 <br>
+                 <br>
+                 <div class="about-featur">
+
+                   
+
+                  
+                </div>
+                <br>
+
+                <div class="card" style="width: 30rem;">
+                    <div class="card-header">
+                      Doctor Profile
+                    </div>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">Timimgs</li>
+                      <li class="list-group-item">videos</li>
+                      <li class="list-group-item">Articles & Blogs</li>
+                    </ul>
+                  </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    
+      <form action="" method="POST">
+      <h2 class="text-secondary"><strong>Book your personal Appoiments.</strong></h2>
+      <br>
+     
+
+
+        {% csrf_token %}
+        {{form.as_p}}
+        <br>
+        <button class="btn btn-success">submit</button>
+      </form>
+
+      <div>
+        {% for mess in messages %}
+        <script>
+          alert('{{mess}}')
+        </script>
+        
+        {% endfor %}
+      </div>
+  
+    
+      
+
+    </div>
+  </section>   
+
+{% endblock %}
+

@@ -1,0 +1,78 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+<div class="container">
+    <br>
+
+    <strong>
+  
+   user :   {{medicine.0.Prescription.patient}}
+  </strong>
+   <br>
+   <strong>
+    Docter : {{medicine.0.Prescription.docter}} 
+  </strong>
+   
+   <br>
+   <strong>
+   Next Appoiment : {{medicine.0.Prescription.nextdate}}
+  </strong>
+   <br>
+  <img src="media/{{medicine.0.Prescription.docter.image}}" alt="">
+   <br>
+
+
+   <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">No</th>
+        <th scope="col">Medicine</th>
+        <th scope="col">Time</th>
+        <th scope="col">quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for med in medicine %}
+
+      <tr>
+        <th scope="row">{{ forloop.counter }}</th>
+        <td>{{med.medicine.name}}</td>
+        <td>{{med.time}}</td>
+        <td>{{med.quantity}}</td>
+      </tr>
+     {% endfor %}
+    </tbody>
+  </table>
+
+{% comment %} 
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">No</th>
+        <th scope="col">Medicine</th>
+        <th scope="col">Time</th>
+        <th scope="col">quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+
+        {% for med in medicine %}
+
+      <tr>
+     
+        <th scope="row">1</th>
+        <td>{{med.medicine.name}}</td>
+        <td>{{med.time}}</td>
+        <td>{{med.quantity}}</td>
+       
+      </tr>
+      {% endfor %}
+
+
+     
+    </tbody>
+  </table> {% endcomment %}
+</div>
+
+{% endblock %}

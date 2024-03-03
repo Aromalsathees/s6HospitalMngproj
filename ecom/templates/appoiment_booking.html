@@ -1,0 +1,51 @@
+{% comment %} {% extends "index.html" %}
+
+{% block content %}
+
+<div class="container">
+   <form action='' method='POST'>
+    {% csrf_token %}
+    {{form.as_p}}
+ 
+    <button class="btn btn-primary">submit</button>
+</form> {% endcomment %}
+
+    {% comment %} <form action="" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="id_patientname">Patient Name</label>
+            <input type="text" name="patientname" class="form-control" id="id_patientname" placeholder="Patient Name">
+        </div>
+        <div class="form-group">
+            <label for="id_patientphone">Phone Number</label>
+            <input type="text" name="patientphone" class="form-control" id="id_patientphone" placeholder="Phone Number">
+        </div>
+        <div class="form-group">
+            <label for="id_emailaddress">Email Address</label>
+            <input type="email" name="emailaddress" class="form-control" id="id_emailaddress" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+            <label for="id_department">Department</label>
+            <select name="department" class="form-control" id="id_department">
+                {% for do in doctor %}
+                <option value="{{ do.department }}">{{ department }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="id_name">Doctor</label>
+            <select name="name" class="form-control" id="id_name">
+                {% for do in doctor %}
+                <option value="{{ do.name }}">{{ doctor }}</option>
+                {% endfor %}
+            </select>
+        </div>
+       
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form> {% endcomment %}
+

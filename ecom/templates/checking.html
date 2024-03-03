@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blood Availability</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+    h1 {
+        text-align: center;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+    .low-stock {
+        background-color: #ffcccc;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Blood Availability</h1>
+    <table>
+        <tr>
+            <th>Blood Type</th>
+            <th>Units Available</th>
+        </tr>
+        <tr>
+            <td>A+</td>
+            <td>15</td>
+        </tr>
+        <tr>
+            <td>B-</td>
+            <td class="low-stock">3</td>
+        </tr>
+        <tr>
+            <td>O+</td>
+            <td>20</td>
+        </tr>
+        <!-- Add more rows for other blood types -->
+    </table>
+</div>
+</body>
+</html>
